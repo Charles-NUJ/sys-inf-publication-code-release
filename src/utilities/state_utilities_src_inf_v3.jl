@@ -38,43 +38,7 @@ function get_all_index(bibdata)
 	return Index_set
 end
 
-# function Get_Simu_tx_actions(connectivity)
-# 	N = size(connectivity, 1)
-# 	N = UInt32(N)
-# 	# @info N
-# 	all_C = collect(1:(2^N-1))
-# 	simu_tx_node_set_list = []
-# 	for simu_tx_node_set in all_C
-# 		# print("十进制表示的数字为 $simu_tx_node_set ")
-# 		node_list = get_all_index(simu_tx_node_set)
-# 		n = length(node_list) # 这里面是一组节点
-# 		# println("节点集合为 $node_list")
-# 		flage = false
-# 		for i in 1:n-1
-# 			i_neighbor = findall(connectivity[node_list[i], :] .> 0)
-# 			for j in i+1:n
-# 				j_neighbor = findall(connectivity[node_list[j], :] .> 0)
-# 				@inbounds if length(intersect(j_neighbor, i_neighbor)) == 0 && length(intersect(j_neighbor, [node_list[i]])) == 0 && length(intersect(i_neighbor, [node_list[j]])) == 0
-# 					flage = true
-# 				else
-# 					flage = false
-# 					break
-# 				end
-# 			end
-# 			if !flage
-# 				break
-# 			end
-# 		end
 
-# 		if flage
-# 			push!(simu_tx_node_set_list, node_list)
-# 		end
-# 		# 然后是让 节点发送的时候不接收
-# 	end
-
-# 	# sort!(simu_tx_node_set_list)
-# 	return simu_tx_node_set_list
-# end
 
 function is_row_encoded(coding_action, row_id)
 	"""Returns true, if row_id is part used in the coding_action."""
@@ -91,26 +55,13 @@ function get_node_ranks(state)
 end
 
 
-#即便在inf情景中, 同时传输的节点, 每次也只能传输一个信息,并且没有相同的接收
-# 因此 node_id 不会是同一个
-# 
-# 1---> A(2,3,4)---B(1,2,3)<---4
-# 信息 1 2 3 4 完成了在所有点上的传输，由于接收节点是不同的
-# 因此 sum(state(:row_id,node_id))上的没有影响，node_id不影响
+
 function get_is_decoded(state)
 	N = size(state, 3)
 	is_decoded = zeros(Int8, N, N)
 	for node_id ∈ 1:N
 		for row_id ∈ 1:size(state, 2)
 			row_sum = sum(state[:, row_id, node_id])
-			# if row_sum > 0
-			# 	is_recived = findall(state[:, row_id, node_id] .> 0)   # 找到有内容的号
-			# 	for index in is_recived
-			# 		if index > 0
-			# 			is_decoded[index, node_id] = 1
-			# 		end
-			# 	end
-
 			if row_sum == 1
 				@inbounds content_id = findfirst(state[:, row_id, node_id] .== 1)
 				@inbounds is_decoded[content_id, node_id] = 1
@@ -129,13 +80,6 @@ function get_is_decoded(state, content_map)
 	for node_id ∈ 1:N
 		for row_id ∈ 1:size(state, 2)
 			row_sum = sum(state[:, row_id, node_id])
-			# if row_sum > 0
-			# 	is_recived = findall(state[:, row_id, node_id] .> 0)
-			# 	for index in is_recived
-			# 		if index > 0
-			# 			is_decoded[content_map[index], node_id] = 1
-			# 		end
-			# 	end
 			if row_sum == 1
 				@inbounds content_id = findfirst(state[:, row_id, node_id] .== 1)
 				@inbounds is_decoded[content_map[content_id], node_id] = 1
@@ -175,7 +119,7 @@ function action_to_coded_payload_inf(state, tx_id, coding_action)
 end
 
 
-function action_to_coded_payload_all_simu(state, action_s_simu) # action_s_simu 中是同时传输的动作
+function action_to_coded_payload_all_simu(state, action_s_simu) # action_s_simu  
 	N = size(state, 3)
 	# println("state=> $state")
 	payload = zeros(Int8, size(state, 1))
@@ -223,7 +167,6 @@ end
 
 function apply_action_inf!(connectivity, state, action_s_simu)
 	"""Transforms the input state according to action tuple (tx_id,coding_action) and connectivity."""
-	# 进来的动作要进行评估
 	# [ Info: Dict{String, Any}("action" => (1, 2), "action_type" => "single")
 	# [ Info: Dict{String, Any}("action" => (1, 2), "action_type" => "single")
 	# [ Info: Dict{String, Any}("action" => ((1, 2), (3, 4)), "action_type" => "sim")
@@ -287,7 +230,7 @@ function apply_action_inf!(connectivity, state, action_s_simu)
 					bin_mat_rref_line!(state, rx_id, zero_row)
 					@inbounds if sum(state[:, zero_row, rx_id]) > 0
 						good_transformation = true
-						push!(flage_all_is_good, 1)  # 有时候是1个有时候是两个
+						push!(flage_all_is_good, 1)  #  
 					end
 				end
 			end
@@ -299,7 +242,7 @@ function apply_action_inf!(connectivity, state, action_s_simu)
 				# push!(UpdateNeibors_all_simu, UpdateNeibors)
 			end
 		end
-		if length(flage_all_is_good) > 0  # 至少是1个good 邻居多了呢是多个good但是要比 循环数多
+		if length(flage_all_is_good) > 0  # 
 			if sum(flage_all_is_good) >= length(action)
 
 				# UpdateNeibors_all_simu_dict_temp = Dict(
@@ -320,8 +263,7 @@ end
 
 function valid_actions(all_actions, state, max_coding_degree, inactive_nodes = [])
 	node_ranks = get_node_ranks(state.decoders)
-	# 节点发送的信息量<= 节点上已经有的信息量    发送谁的信息<= 飞行中的信息量
-	# 以2填充的位数,
+
 	@inbounds step_actions = [action for action in all_actions if (ndigits(action[2], base = 2) <= node_ranks[action[1]]) && (count_ones(action[2]) <= max_coding_degree)]
 	# Remove actions of inactive node
 	for inactive_node in inactive_nodes
@@ -332,15 +274,14 @@ end
 
 
 function valid_actions_all_simu(all_actions,simu_tx_list, connectivity, state, max_coding_degree, max_inference_simu, max_inflight, inactive_nodes = []) #v2
-	# @info "基本动作集 $all_actions"
-	# action_set = vec(collect(Iterators.product(1:N, 1:2^N))) # 基本动作集
+	# @info " $all_actions"
+	# action_set = vec(collect(Iterators.product(1:N, 1:2^N)))  
 	node_ranks = get_node_ranks(state.decoders)
 	# @info max_coding_degree
 
 	@inbounds step_actions = [action for action in all_actions if (ndigits(action[2], base = 2) <= node_ranks[action[1]]) && (count_ones(action[2]) <= max_coding_degree)]
-	#  step_actions = [action for action in all_actions if (  ndigits(action[2], base = 2) <= node_ranks[action[1]] && ndigits(action[2], base = 2)>0) && (count_ones(action[2]) <= max_coding_degree)] 是不会等于0的
 
-	# 对筛选后的基本动作集, 按照叶子只发一次的规则,去掉已经发过的叶子,Remove actions of inactive node
+	# Remove actions of inactive node
 	for inactive_node in inactive_nodes
 		@inbounds step_actions = [action for action in step_actions if action[1] != inactive_node]
 	end
@@ -457,8 +398,6 @@ function valid_actions_all_simu(all_actions,simu_tx_list, connectivity, state, m
 		end
 
 		for sim_action in step_actions_sim
-			# 在max_degree=1的情景下不用判断
-			# @info "同时传输的动作的信息量的和也不大于max_inflight 主要应对每次传输的信息量不为1的情况$sim_action" 
 			degree_tx_sum = 0
 			for action in sim_action
 				@inbounds degree_tx_sum = degree_tx_sum + count_ones(action[2])
@@ -476,7 +415,6 @@ function valid_actions_all_simu(all_actions,simu_tx_list, connectivity, state, m
 		end
 	end
 
-	# 单点不并发
 	for single_action in step_actions
 		single_type_and_action = Dict(
 			"at" => "g",
@@ -525,23 +463,7 @@ function purge_disseminated_contents!(state, content_purged, content_map)
 end
 
 
-function coded_payload_to_action(state, tx_id, coded_payload)
-	N = size(state, 3)
-	possible_actions = 0:sum(binomial.(N, 1:N))
-	for action in possible_actions
-		test_payload = zeros(N)
-		for row_id in 1:N
-			if is_row_encoded(action, row_id)
-				test_payload = (test_payload + state[:, row_id, tx_id])
-			end
-			if test_payload == coded_payload
-				# return (tx_id, action)
-				return (tx_id, action)
-			end
-		end
-	end
-	return missing
-end
+
 
 
 # function payload_schedule_to_action_schedule(connectivity, payload_schedule)
