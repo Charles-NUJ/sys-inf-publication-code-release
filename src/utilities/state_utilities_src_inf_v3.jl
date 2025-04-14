@@ -193,7 +193,6 @@ function apply_action_inf!(connectivity, state, action_s_simu)
 				zero_row = zero_row[2]
 				for c_d ∈ 1:N
 					@inbounds state[c_d, zero_row, rx_id] = (state[c_d, zero_row, rx_id] + payload[c_d]) % 2
-					#即便是inf情景中,因为没有共同的接收节点，有效的接收中，接受节点每次依然每次接受1个
 				end
 				bin_mat_rref_line!(state, rx_id, zero_row)
 				@inbounds if sum(state[:, zero_row, rx_id]) > 0
@@ -358,42 +357,8 @@ function valid_actions_all_simu(all_actions,simu_tx_list, connectivity, state, m
 				for i in action_set
 					push!(step_actions_sim, i)
 				end
-				# elseif max_color_num == 4
-				# 	 action_set = vec(collect(Iterators.product(LIST[1], LIST[2], LIST[3], LIST[4])))
-				# 	# @info "这些动作n*m*m*m' 组合 $action_set  "
-				# 	for i in action_set
-				# 		push!(step_actions_sim, i)
-				# 	end
-				# elseif max_color_num == 5
-				# 	 action_set = vec(collect(Iterators.product(LIST[1], LIST[2], LIST[3], LIST[4], LIST[5])))
-				# 	# @info "这些动作n*m*m*m*m组合 $action_set  "
-				# 	for i in action_set
-				# 		push!(step_actions_sim, i)
-				# 	end
-				# elseif max_color_num == 6
-				# 	 action_set = vec(collect(Iterators.product(LIST[1], LIST[2], LIST[3], LIST[4], LIST[5], LIST[6])))
-				# 	# @info "这些动作n*m*m*m*m*m组合 $action_set  "
-				# 	for i in action_set
-				# 		push!(step_actions_sim, i)
-				# 	end
-				# elseif max_color_num == 7
-				# 	 action_set = vec(collect(Iterators.product(LIST[1], LIST[2], LIST[3], LIST[4], LIST[5], LIST[6], LIST[7])))
-				# 	# @info "这些动作n*m*m*m*m*m组合 $action_set  "
-				# 	for i in action_set
-				# 		push!(step_actions_sim, i)
-				# 	end
 
-				# elseif max_color_num == 8
-				# 	action_set = vec(collect(Iterators.product(LIST[1], LIST[2], LIST[3], LIST[4], LIST[5], LIST[6], LIST[7],LIST[8])))
-				# 	# @info "这些动作n*m*m*m*m*m组合 $action_set  "
-				# 	for i in action_set
-				# 		push!(step_actions_sim, i)
-				# 	end
 			end
-			#...... 可以继续写同时多少个并发的
-			# else
-			# println("not satisify the sim_tx_number band")
-			# end
 
 		end
 
@@ -446,7 +411,6 @@ function purge_disseminated_contents!(state, content_purged, content_map)
 	is_decoded = get_is_decoded(state)
 	for content_id in findall(sum(is_decoded, dims = 2) .== N)
 		content_id = content_id[1]
-		# if content_id > 0
 		content_purged[content_map[content_id]] = true
 		for node_id ∈ 1:N
 			for row_id ∈ 1:N2
@@ -456,32 +420,11 @@ function purge_disseminated_contents!(state, content_purged, content_map)
 					break
 				end
 			end
-			# end
 		end
 	end
 	return nothing
 end
 
-
-
-
-
-# function payload_schedule_to_action_schedule(connectivity, payload_schedule)
-# 	N = size(connectivity, 1)
-# 	state = zeros(Int8, N, N, N)
-# 	for node_id ∈ 1:N
-# 		state[node_id, 1, node_id] = 1
-# 	end
-# 	action_schedule = []
-# 	for payload in payload_schedule
-# 		# action = coded_payload_to_action(state, payload[1], payload[2])
-# 		action = coded_payload_to_action(state, tx_id, payload)  
-# 		apply_action_inf!(connectivity, state, action)
-# 		purge_disseminated_contents!(state, get_is_decoded(state))
-# 		push!(action_schedule, action)
-# 	end
-# 	return action_schedule
-# end
 
 function apply_action!(connectivity, state, action)
 	"""Transforms the input state according to action tuple (tx_id,coding_action) and connectivity."""
