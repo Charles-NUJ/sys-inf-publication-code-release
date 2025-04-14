@@ -7,4 +7,8 @@ The original code repository for the scientific publication is 'Optimizing Age o
 
 The modified file is mainly in state_utilities_src_inf_v3.jl
 
+<<<<<<< HEAD
 After the paper is accepted, we will disclose all the project codes.
+=======
+After the paper is accepted, we will disclose all the project codes.
+>>>>>>> 08346fab527d2068285c9a1ea4f82ee72ec48678
