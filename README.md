@@ -18,7 +18,7 @@ The AoI-optimal systematic schedule is given by (1, 1), (2, 1), (3, 1), (2, 2), 
 
 The components $(\bar{\Delta},\tau,\omega+\gamma)$ are $(6.67, 5, 1.67)$ for the systematic and $(6.5, 4.5, 2.0)$ for the interference-constrained schedule.
 
-**Despite the additional dissemination delay $\omega+\gamma$, simultaneous transmissions lead to an AoI ($\bar{\Delta}$) gain $6.67 \rightarrow 6.5 $ because of the reduction in the updating cycle $2\$tau.**
+**Despite the additional dissemination delay $\omega+\gamma$, simultaneous transmissions lead to an AoI ($\bar{\Delta}$)  gain  $6.67 \rightarrow 6.5 $ because of the reduction in the updating cycle $2\tau$.**
 
 Any references to this code, protocol, or results shall be realized by citing the original paper from IEEE Xplore.
 
