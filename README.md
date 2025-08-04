@@ -10,6 +10,14 @@
 
 ... We analyze the potential gains of supporting simultaneous transmission under interference constraints. For small networks, an additional dissemination delay incurred in the schedule is outweighed by a better update cycle, yielding an AoI improvement of \(6.83\%\). In AOHF, we combine simultaneous transmissions with network coding to improve AoI further. For large-scale networks, extensive evaluations demonstrate the effectiveness of AOHF and highlight AoI improvements. ...
 
+# An Example
+
+![image-20250804210706990](git_figure/fig.four_line.png)
+
+The AoI-optimal systematic schedule is given by (1, 1), (2, 1), (3, 1), (2, 2), (3, 2), (3, 3), (2, 3), (4, 4), (3, 4), (2, 4).  The topologically-dependent interference-constrained AoI-optimal schedule is ((1, 1), (4, 1)), (2, 1), (3, 4), (2, 4), (3, 1), (3, 3), (2, 3), (2, 2), (3, 2), with nodes $1$ and $4$ transmitting simultaneously at the first slot. 
+
+The components $(\bar{\Delta},\tau,\omega+\gamma)$ are $(6.67, 5, 1.67)$ for the systematic and $(6.5, 4.5, 2.0)$ for the interference-constrained schedule.
+
 
 
 Any references to this code, protocol, or results shall be realized by citing the original paper from IEEE Xplore.
