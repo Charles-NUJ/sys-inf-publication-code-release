@@ -60,3 +60,21 @@ UpdateNeibors_all_simu_dict_temp = Dict(
     "UpdateNeibors" => UpdateNeibors_all_simu,
 )
 ```
+
+
+
+ [fig.four_line.pdf](..\..\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\fig.four_line.pdf) 
+
+![inf_aoi_from_direct_C_e](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf_aoi_from_direct_C_e.png)
+
+
+
+ [aoi-CMP_sys_inf_nc_inf_pool2A.eps](..\..\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\aoi-CMP_sys_inf_nc_inf_pool2A.eps) 
+
+![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big.png)
+
+![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T.png)
+
+![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big.png)
+
+![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T.png)
