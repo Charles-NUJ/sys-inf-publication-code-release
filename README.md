@@ -69,7 +69,7 @@ UpdateNeibors_all_simu_dict_temp = Dict(
 
 
 
-![aoi-CMP_sys_inf_nc_inf_pool2A](git_figure\aoi-CMP_sys_inf_nc_inf_pool2A.png)
+![aoi-CMP_sys_inf_nc_inf_pool2A](https://github.com/Charles-NUJ/sys-inf-publication-code-release/blob/main/git_figure/aoi-CMP_sys_inf_nc_inf_pool2A.png)
 
 ![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big](git_figure\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big.png)
 
