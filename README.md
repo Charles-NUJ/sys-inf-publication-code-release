@@ -1,8 +1,21 @@
 
+
+
+
+# Abstract
+
+... This work focuses on achieving optimal AoI in all-to-all status update networks under the general topologically-dependent interference. In our model, each node serves as both a periodic source and a monitor, and multiple nodes can transmit simultaneously if they do not have a common neighbor.....
+
+.... As far as we know, this is the first work to offer explicit AoI-oriented scheduling for all-to-all multi-hop under general interference constraints. The AoI-optimal schedule is transformed into a full graph-traversal problem.....
+
+... We analyze the potential gains of supporting simultaneous transmission under interference constraints. For small networks, an additional dissemination delay incurred in the schedule is outweighed by a better update cycle, yielding an AoI improvement of \(6.83\%\). In AOHF, we combine simultaneous transmissions with network coding to improve AoI further. For large-scale networks, extensive evaluations demonstrate the effectiveness of AOHF and highlight AoI improvements. ...
+
+
+
 Any references to this code, protocol, or results shall be realized by citing the original paper from IEEE Xplore.
 
 ## Preface
-Our work is based on the networking method of https://ieeexplore.ieee.org/document/10279069
+Our work is based on the A* method of https://ieeexplore.ieee.org/document/10279069
 
 The original code repository for the scientific publication is 'Optimizing Age of Information in Status Update Systems using Network Coding: A Graph Search Approach' by Fisser, Leonard and Timm-Giel, Andreas published at the IEEE International Conference on Communications 2023 held in Rome, Italy.
 
