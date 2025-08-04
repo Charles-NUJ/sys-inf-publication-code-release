@@ -63,18 +63,18 @@ UpdateNeibors_all_simu_dict_temp = Dict(
 
 
 
- [fig.four_line.pdf](..\..\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\fig.four_line.pdf) 
+ [fig.four_line.pdf](git_figure\fig.four_line.pdf) 
 
-![inf_aoi_from_direct_C_e](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf_aoi_from_direct_C_e.png)
+![inf_aoi_from_direct_C_e](git_figure\inf_aoi_from_direct_C_e.png)
 
 
 
- [aoi-CMP_sys_inf_nc_inf_pool2A.eps](..\..\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\aoi-CMP_sys_inf_nc_inf_pool2A.eps) 
+![aoi-CMP_sys_inf_nc_inf_pool2A](git_figure\aoi-CMP_sys_inf_nc_inf_pool2A.png)
 
-![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big.png)
+![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big](git_figure\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big.png)
 
-![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T.png)
+![inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T](git_figure\inf-sys-sysinf-graphsize_degree_gain-erod_renyi_graphs-density-big-T.png)
 
-![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big.png)
+![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big](git_figure\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big.png)
 
-![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T](C:\Users\GE76\OneDrive\work\wcl-pg\Glob26Fail-sysinf-AOHF-WCL\figures\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T.png)
+![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T](git_figure\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T.png)
