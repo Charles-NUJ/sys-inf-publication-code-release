@@ -77,4 +77,4 @@ UpdateNeibors_all_simu_dict_temp = Dict(
 
 ![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big](git_figure\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big.png)
 
-![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T](git_figure\inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T.png)
+![inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T](git_figure/inf-sys-sysinf-graphsize_degree_gain-geometric_graphs-cutoff-big-T.png)
