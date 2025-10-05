@@ -29,7 +29,7 @@ The original code repository for the scientific publication is 'Optimizing Age o
 
 The modified file is mainly in state_utilities_src_inf_v3.jl and incremental_a_star_inf_v3.jl
 
-After the paper is accepted, we will disclose all the project codes.
+
 
 ## Getting Started
 1. Download and install [JuliaLang](https://julialang.org/downloads/oldreleases/) Version 1.7.3.
