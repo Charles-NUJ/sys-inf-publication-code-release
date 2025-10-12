@@ -27,7 +27,7 @@ Our work is based on the A* method of https://ieeexplore.ieee.org/document/10279
 The original code repository for the scientific publication is 'Optimizing Age of Information in Status Update Systems using Network Coding: A Graph Search Approach' by Fisser, Leonard and Timm-Giel, Andreas published at the IEEE International Conference on Communications 2023 held in Rome, Italy.
 
 The modified file is mainly in state_utilities_src_inf_v3.jl and incremental_a_star_inf_v3.jl
-If need our total project, email: huph197@smail.nju.edu.cn
+Email: huph197@smail.nju.edu.cn
 
 
 
